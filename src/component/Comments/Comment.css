@@ -1,0 +1,130 @@
+.comments {
+    display: flex;
+    padding: 100px 80px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: #F7F7F8;
+}
+
+.comment-inner {
+    display: flex;
+    width: 1277px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 60px;
+}
+
+.comment-head {
+    display: flex;
+    padding: 0px 230px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    align-self: stretch;
+}
+
+.comments-header {
+    align-self: stretch;
+    color: #000;
+    text-align: center;
+    font-family: "Clash Display";
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 57px */
+}
+
+.comment-para {
+    align-self: stretch;
+    color: #050B20;
+    text-align: center;
+    font-family: Manrope;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+}
+
+.first {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    align-self: stretch;
+}
+
+.second-container {
+    display: flex;
+    width: 1277px;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.comment-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    flex: 1 0 0;
+}
+
+.card-holder {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.text-holder {
+    display: flex;
+    padding: 30px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+    border-radius: 15px;
+    background: #FFF;
+}
+
+.tip-con {
+    display: flex;
+    padding: 0px 14px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.tipicon {
+    width: 32px;
+    height: 19px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+}
+
+.profile-img {
+    width: 53px;
+    height: 53px;
+}
+
+.pro-text {
+    align-self: stretch;
+    color: #000;
+    font-family: "Clash Display";
+    font-size: 19.429px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 29.144px */
+}
+
+
+
+@media screen and (max-width: 450px) and (max-width: 675px) {
+   
+}
+    

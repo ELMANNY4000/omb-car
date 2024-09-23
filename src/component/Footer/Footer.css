@@ -1,0 +1,289 @@
+.footer {
+    display: flex;
+    width: 100%;
+    padding: 60px 80px 20px 80px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    background: var(--Absolute-White, #FFF);
+}
+
+.foot-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.footer-company {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.logo-footer {
+    display: flex;
+    align-self: stretch;
+    flex-direction: column;
+    justify-content: center;
+
+    color: var(--Primary-500, #3563E9);
+    font-family: "Clash Display";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    /* 48px */
+    letter-spacing: -0.96px;
+}
+
+.company-contact {
+    display: flex;
+    width: 304px;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.con-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.contact {
+    color: var(--Grey-15, #262626);
+    font-family: Manrope;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 24px */
+}
+
+.socials-pages {
+    display: flex;
+    width: 737px;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.pages-links {
+    display: flex;
+    width: 230px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.links-head {
+    align-self: stretch;
+    color: var(--Grey-15, #262626);
+    font-family: Manrope;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    /* 27px */
+}
+
+.social {
+    display: flex;
+    width: 218px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    flex-shrink: 0;
+}
+
+.social-head {
+    align-self: stretch;
+    color: var(--Grey-15, #262626);
+    font-family: Manrope;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    /* 27px */
+}
+
+.social-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.link-socials {
+    display: flex;
+    padding: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+
+    border-radius: 6px;
+    border: 1px solid var(--White-95, #F1F1F3);
+    background: var(--White-97, #F7F7F8);
+}
+
+.foot-date {
+    align-self: stretch;
+    color: var(--Grey-40, #656567);
+    text-align: center;
+    font-family: Manrope;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    /* 21px */
+}
+
+.footer-icon {
+    width: 20px;
+    height: 20px;
+}
+
+@media screen and (max-width: 450px) and (max-width: 675px) {
+    .footer {
+        display: block;
+        width: 100%;
+        padding: 50px 20px 24px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+  
+    .foot-container {
+        display: block;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        align-self: stretch;
+    }
+  
+    .footer-company {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+        align-self: stretch;
+    }
+  
+    .logo-footer {
+        color: var(--Purple-50, #5700FF);
+        font-family: "Clash Display";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+  
+    .company-contact {
+        display: flex;
+        align-items: flex-start;
+        align-content: flex-start;
+        gap: 12px;
+        align-self: stretch;
+        flex-wrap: wrap;
+    }
+  
+    .con-link {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+  
+    .fooer-icon {
+        width: 24px;
+        height: 24px;
+    }
+  
+    .contact {
+        color: var(--Grey-15, #262626);
+        font-family: Manrope;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        /* 22.5px */
+    }
+  
+    .socials-pages {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        align-self: stretch;
+    }
+  
+    .pages-links {
+        display: flex;
+        width: 128px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+  
+    .links-head {
+        align-self: stretch;
+        color: var(--Grey-35, #59595A);
+        font-family: Manrope;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        /* 21px */
+    }
+  
+    .social {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        align-self: stretch;
+    }
+  
+    .social-head {
+        align-self: stretch;
+        color: var(--Grey-15, #262626);
+        font-family: Manrope;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 150%;
+        /* 27px */
+    }
+  
+    .social-container {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+    }
+  
+    .link-socials {
+        display: flex;
+        padding: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        border-radius: 6px;
+        border: 1px solid var(--White-95, #F1F1F3);
+        background: var(--White-97, #F7F7F8);
+    }
+
+    .foot-date {
+        align-self: stretch;
+        color: var(--Grey-40, #656567);
+        text-align: center;
+        font-family: Manrope;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; /* 21px */
+    }
+  
+    
+  }

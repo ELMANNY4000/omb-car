@@ -1,0 +1,84 @@
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup.show {
+    display: flex;
+}
+
+.popup-inner {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.requirements h3 {
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+ul {
+    text-align: left;
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+ul li::before {
+    content: "✔";
+    color: green;
+    margin-right: 10px;
+}
+
+.price h3 {
+    font-size: 24px;
+    color: #007bff;
+    margin-top: 20px;
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.cancel-btn, .proceed-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.cancel-btn {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.proceed-btn {
+    background-color: #007bff;
+    color: white;
+}
