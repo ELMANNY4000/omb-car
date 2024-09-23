@@ -5,28 +5,32 @@ const Popup = ({ show, handleClose, title, requirements, price }) => {
   return (
     <div className={`popup ${show ? "show" : ""}`}>
       <div className="popup-inner">
-        <h2 className="popup-head">{title}</h2>
-
-        <div className="requirements">
-          <h3>Requirements</h3>
-          <div className="sub-requirements">
-          <ul>
-            {requirements.map((requirement, index) => (
-              <li key={index}>{requirement}</li>
-            ))}
-          </ul>
+        <div className="popup-con">
+          <div className="pop-header">
+            <h2 className="popup-head">{title}</h2>
           </div>
-        </div>
 
-        <div className="price">
-          <h3>{price}</h3>
-        </div>
+          <div className="requirements">
+            <h3>Requirements</h3>
+            <div className="sub-requirements">
+              <ul>
+                {requirements.map((requirement, index) => (
+                  <li key={index}>{requirement}</li>
+                ))}
+              </ul>
+            </div>
 
-        <div className="popup-buttons">
-          <button className="cancel-btn" onClick={handleClose}>
-            Cancel Payment
-          </button>
-          <button className="proceed-btn">Proceed Payment</button>
+            <div className="price">
+              <h3>{price}</h3>
+            </div>
+
+            <div className="popup-buttons">
+              <button className="cancel-btn" onClick={handleClose}>
+                Cancel Payment
+              </button>
+              <button className="proceed-btn">Proceed Payment</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

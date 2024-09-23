@@ -19,11 +19,27 @@ const Services = () => {
   return (
     <>
       <div className="services">
-        <div className="service-container">
+        <div className="service-container"> {/* Category Button */}
+            <div className="select-container">
+              <div className="category-btn">
+                <span className="cate-text">Cars</span>
+              </div>
+
+              <div className="category-btn">
+                <span className="cate-text">Motorcycle</span>
+              </div>
+
+              <div className="category-btn">
+                <span className="cate-text">Truck</span>
+              </div>
+            </div>
           {/* Header-text */}
           <div className="service-head">
             <h1 className="service-header">Select a service</h1>
           </div>
+
+           
+          
 
           {/* Service Cards */}
           <div className="service-card-con">
