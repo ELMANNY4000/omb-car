@@ -6,11 +6,13 @@ const Services = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [popupContent, setPopupContent] = useState({
     title: "",
-    description: "",
+    requirements: [],
+    price: "",
   });
 
-  const togglePopup = (serviceTitle, serviceDescription) => {
-    setPopupContent({ title: serviceTitle, description: serviceDescription });
+  // Function to toggle popup and update its content dynamically
+  const togglePopup = (serviceTitle, serviceRequirements, servicePrice) => {
+    setPopupContent({ title: serviceTitle, requirements: serviceRequirements, price: servicePrice });
     setShowPopup(!showPopup);
   };
 
@@ -21,35 +23,36 @@ const Services = () => {
           {/* Header-text */}
           <div className="service-head">
             <h1 className="service-header">Select a service</h1>
-            {/* Category Button */}
-            <div className="select-container">
-              <div className="category-btn">
-                <span className="cate-text">Cars</span>
-              </div>
-
-              <div className="category-btn">
-                <span className="cate-text">Motorcycle</span>
-              </div>
-
-              <div className="category-btn">
-                <span className="cate-text">Truck</span>
-              </div>
-            </div>
           </div>
-          {/* Card section */}
+
+          {/* Service Cards */}
           <div className="service-card-con">
+            {/* Vehicle Document Renewal */}
             <div className="service-card">
               <div className="img-service">
-                <img src="" alt="" className="service-img" />
+                <img src="./images/service.jpg" alt="" className="service-img" />
               </div>
-              <span className="card-title">Vehicle Document Renewal </span>
-              <div className="card-price">From: ₦5000 - ₦15,400</div>
+              <span className="card-title">Vehicle Document Renewal</span>
+              <div className="card-price">From: ₦5,000 - ₦15,400</div>
               <div
                 className="payment-btn"
                 onClick={() =>
                   togglePopup(
-                    "Vehicle Document Renewal",
-                    "Details about vehicle document renewal..."
+                    "Vehicle Document Renewal Requirements",
+                    [
+                      "Full Name",
+                      "Address",
+                      "Scanned Copy of custom duties",
+                      "Chassis number",
+                      "Engine Number",
+                      "Car Color",
+                      "Phone Number",
+                      "Picture of chassis on Dashboard",
+                      "New Car Registration Requirements",
+                      "A Picture of the expired vehicle license",
+                      "Address and Phone number for delivery"
+                    ],
+                    "₦15,400"
                   )
                 }
               >
@@ -57,20 +60,27 @@ const Services = () => {
               </div>
             </div>
 
+            {/* Vehicle Re-Registration */}
             <div className="service-card">
               <div className="img-service">
-                <img src="" alt="" className="service-img" />
+                <img src="./images/service1.jpg" alt="" className="service-img" />
               </div>
-              <span className="card-title">
-                Vehicle Re-Registration (Change Of Ownership) Requirements
-              </span>
-              <div className="card-price">From: ₦5000 - ₦15,400</div>
+              <span className="card-title">Vehicle Re-Registration (Change of Ownership)</span>
+              <div className="card-price">From: ₦5,000 - ₦15,400</div>
               <div
                 className="payment-btn"
                 onClick={() =>
                   togglePopup(
-                    "Vehicle Re-Registration",
-                    "Details about vehicle re-registration..."
+                    "Vehicle Re-Registration Requirements",
+                    [
+                      "Full Name",
+                      "Address",
+                      "Proof of Ownership",
+                      "Previous Registration Documents",
+                      "Chassis Number",
+                      "Engine Number"
+                    ],
+                    "₦12,000"
                   )
                 }
               >
@@ -78,18 +88,25 @@ const Services = () => {
               </div>
             </div>
 
+            {/* International Drivers License */}
             <div className="service-card">
               <div className="img-service">
-                <img src="" alt="" className="service-img" />
+                <img src="./images/service2.jpg" alt="" className="service-img" />
               </div>
               <span className="card-title">International Drivers License</span>
-              <div className="card-price">From: ₦5000 - ₦15,400</div>
+              <div className="card-price">From: ₦5,000 - ₦15,400</div>
               <div
                 className="payment-btn"
                 onClick={() =>
                   togglePopup(
-                    "International Drivers License",
-                    "Details about international drivers license..."
+                    "International Drivers License Requirements",
+                    [
+                      "Full Name",
+                      "Address",
+                      "Current Drivers License",
+                      "Passport Photo"
+                    ],
+                    "₦10,500"
                   )
                 }
               >
@@ -97,20 +114,25 @@ const Services = () => {
               </div>
             </div>
 
+            {/* Drivers License (New Application) */}
             <div className="service-card">
               <div className="img-service">
-                <img src="" alt="" className="service-img" />
+                <img src="./images/service3.jpg" alt="" className="service-img" />
               </div>
-              <span className="card-title">
-                Drivers Licence (New Application)
-              </span>
-              <div className="card-price">From: ₦5000 - ₦15,400</div>
+              <span className="card-title">Drivers License (New Application)</span>
+              <div className="card-price">From: ₦5,000 - ₦15,400</div>
               <div
                 className="payment-btn"
                 onClick={() =>
                   togglePopup(
-                    "Drivers Licence (New Application)",
-                    "Details about drivers licence (new application)..."
+                    "Drivers License (New Application) Requirements",
+                    [
+                      "Full Name",
+                      "Address",
+                      "Medical Fitness Report",
+                      "Passport Photos"
+                    ],
+                    "₦15,000"
                   )
                 }
               >
@@ -120,10 +142,13 @@ const Services = () => {
           </div>
 
           {/* Popup Component */}
-          <Popup show={showPopup} handleClose={() => setShowPopup(false)}>
-            <h2>{popupContent.title}</h2>
-            <p>{popupContent.description}</p>
-          </Popup>
+          <Popup
+            show={showPopup}
+            handleClose={() => setShowPopup(false)}
+            title={popupContent.title}
+            requirements={popupContent.requirements}
+            price={popupContent.price}
+          />
         </div>
       </div>
     </>

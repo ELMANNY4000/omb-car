@@ -1,31 +1,25 @@
-import PropTypes from "prop-types"; // Import PropTypes
+import PropTypes from "prop-types";
 import "./Popup.css"; // Assuming the CSS matches the design
 
-const Popup = ({ show, handleClose }) => {
+const Popup = ({ show, handleClose, title, requirements, price }) => {
   return (
     <div className={`popup ${show ? "show" : ""}`}>
       <div className="popup-inner">
-        <h2>Vehicle Document Renewal Requirements</h2>
+        <h2 className="popup-head">{title}</h2>
 
         <div className="requirements">
           <h3>Requirements</h3>
+          <div className="sub-requirements">
           <ul>
-            <li>Full Name</li>
-            <li>Address</li>
-            <li>Scanned Copy of custom duties</li>
-            <li>Chassis number</li>
-            <li>Engine Number</li>
-            <li>Car Color</li>
-            <li>Phone Number</li>
-            <li>Picture of chassis on Dashboard</li>
-            <li>New Car Registration Requirements</li>
-            <li>A Picture of the expired vehicle license</li>
-            <li>Address and Phone number for delivery</li>
+            {requirements.map((requirement, index) => (
+              <li key={index}>{requirement}</li>
+            ))}
           </ul>
+          </div>
         </div>
 
         <div className="price">
-          <h3>₦15,400</h3>
+          <h3>{price}</h3>
         </div>
 
         <div className="popup-buttons">
@@ -41,8 +35,11 @@ const Popup = ({ show, handleClose }) => {
 
 // Add PropTypes validation
 Popup.propTypes = {
-  show: PropTypes.bool.isRequired, // show must be a boolean and is required
-  handleClose: PropTypes.func.isRequired, // handleClose must be a function and is required
+  show: PropTypes.bool.isRequired, // 'show' determines whether to display the popup
+  handleClose: PropTypes.func.isRequired, // 'handleClose' handles closing the popup
+  title: PropTypes.string.isRequired, // Dynamic title for the popup
+  requirements: PropTypes.array.isRequired, // Dynamic list of requirements
+  price: PropTypes.string.isRequired, // Dynamic price for the service
 };
 
 export default Popup;
