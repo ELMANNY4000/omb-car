@@ -25,10 +25,11 @@ const Services = () => {
       <div className="services">
         <div className="service-container">
           {" "}
-          {/* Category Button */}
+          
           {/* Header-text */}
           <div className="service-head">
             <h1 className="service-header">Select a service</h1>
+            {/* Category Button */}
             <div className="select-container">
               <div className="category-btn">
                 <span className="cate-text">Cars</span>
