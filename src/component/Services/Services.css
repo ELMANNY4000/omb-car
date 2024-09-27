@@ -166,6 +166,10 @@
 
 /* MEDIA QUERIES FOR RESPONSIVENESS */
 @media screen and (max-width: 1024px) {
+    .services{
+        padding: 40px 16px;
+    }
+
     .service-header {
         font-size: 36px;
     }

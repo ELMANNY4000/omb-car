@@ -1,86 +1,109 @@
+/* Main popup container */
 .popup {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(5, 11, 32, 0.43);
-    backdrop-filter: blur(5.550000190734863px);
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
     justify-content: center;
     align-items: center;
-}
-
-.popup.show {
+    z-index: 999;
+  }
+  
+  .popup.show {
     display: flex;
-}
-
-.popup-inner {
-    background-color: white;
-    padding: 20px;
+  }
+  
+  .popup-inner {
+    background: #fff;
+    padding: 30px;
     border-radius: 10px;
     max-width: 500px;
     width: 100%;
-    text-align: center;
-    padding: 60px 50px;
-}
-
-h2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.requirements h3 {
-    text-align: left;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-ul {
-    text-align: left;
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
-    margin-bottom: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  
+  .popup-con {
     display: flex;
-    align-items: center;
-}
-
-ul li::before {
-    content: "✔";
-    color: green;
-    margin-right: 10px;
-}
-
-.price h3 {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .pop-header h2 {
     font-size: 24px;
-    color: #007bff;
-    margin-top: 20px;
-}
-
-.popup-buttons {
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .requirements h3 {
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .sub-requirements ul {
+    padding-left: 20px;
+  }
+  
+  .sub-requirements li {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  .price h3 {
+    font-size: 22px;
+    color: #358BE9;
+  }
+  
+  .popup-buttons {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
-}
-
-.cancel-btn, .proceed-btn {
+    gap: 10px;
+  }
+  
+  .cancel-btn, .proceed-btn {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
     font-size: 16px;
-}
-
-.cancel-btn {
-    background-color: #f0f0f0;
-    color: #333;
-}
-
-.proceed-btn {
-    background-color: #007bff;
+    font-weight: 600;
+  }
+  
+  .cancel-btn {
+    background-color: #ff5f5f;
     color: white;
-}
+  }
+  
+  .proceed-btn {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  /* Mobile responsiveness */
+  @media screen and (max-width: 480px) {
+    .popup-inner {
+      padding: 20px;
+    }
+  
+    .pop-header h2 {
+      font-size: 20px;
+    }
+  
+    .sub-requirements li {
+      font-size: 14px;
+    }
+  
+    .popup-buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .cancel-btn, .proceed-btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  

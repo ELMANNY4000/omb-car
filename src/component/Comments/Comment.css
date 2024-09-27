@@ -2,81 +2,79 @@
     display: flex;
     padding: 100px 80px;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center; /* Changed to center */
     gap: 10px;
     background: #F7F7F8;
     width: 100%;
-}
-
-.comment-inner {
+  }
+  
+  .comment-inner {
     display: flex;
-    width: 1277px;
+    width: 100%; /* Adjust to fit mobile screen */
+    max-width: 1277px; /* Limit maximum width */
     flex-direction: column;
     align-items: flex-start;
     gap: 60px;
-}
-
-.comment-head {
+  }
+  
+  .comment-head {
     display: flex;
-    padding: 0px 230px;
+    padding: 0px 20px; /* Reduce padding on mobile */
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center; /* Center-align on mobile */
+    text-align: center; /* Center text alignment */
     gap: 14px;
     align-self: stretch;
-}
-
-.comments-header {
+  }
+  
+  .comments-header {
     align-self: stretch;
     color: #000;
-    text-align: center;
     font-family: "Clash Display";
     font-size: 38px;
-    font-style: normal;
     font-weight: 600;
     line-height: 150%; /* 57px */
-}
-
-.comment-para {
+  }
+  
+  .comment-para {
     align-self: stretch;
     color: #050B20;
-    text-align: center;
     font-family: Manrope;
     font-size: 16px;
-    font-style: normal;
     font-weight: 400;
     line-height: 150%; /* 24px */
-}
-
-.first {
+  }
+  
+  .first {
     display: flex;
-    align-items: flex-start;
+    flex-direction: row; /* Stack cards vertically on mobile */
     gap: 20px;
     align-self: stretch;
-}
-
-.second-container {
+  }
+  
+  .second-container {
     display: flex;
-    width: 1277px;
-    align-items: flex-start;
+    flex-direction: column; /* Stack cards vertically */
     gap: 20px;
-}
-
-.comment-card {
+    width: 100%;
+  }
+  
+  .comment-card {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
     flex: 1 0 0;
-}
-
-.card-holder {
+  }
+  
+  .card-holder {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     align-self: stretch;
-}
-
-.text-holder {
+  }
+  
+  .text-holder {
     display: flex;
     padding: 30px;
     flex-direction: column;
@@ -85,47 +83,78 @@
     align-self: stretch;
     border-radius: 15px;
     background: #FFF;
-}
-
-.tip-con {
+  }
+  
+  .tip-con {
     display: flex;
     padding: 0px 14px;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
-}
-
-.tipicon {
-    width: 32px;
-    height: 19px;
-}
-
-.profile {
+  }
+  
+  .profile {
     display: flex;
     align-items: center;
     gap: 10px;
     align-self: stretch;
-}
-
-.profile-img {
+  }
+  
+  .profile-img {
     width: 53px;
     height: 53px;
-}
-
-.pro-text {
+  }
+  
+  .pro-text {
     align-self: stretch;
     color: #000;
     font-family: "Clash Display";
-    font-size: 19.429px;
-    font-style: normal;
+    font-size: 19px;
     font-weight: 400;
-    line-height: 150%; /* 29.144px */
-}
-
-
-
-@media screen and (min-width: 450px) and (min-width: 675px) {
+    line-height: 150%; /* 29px */
+  }
   
-   
-}
-    
+  /* Mobile responsiveness */
+  @media screen and (max-width: 768px) {
+   .comments {
+    padding: 40px 16px;
+   }
+    .comment-inner {
+      padding: 20px;
+    }
+  
+    .comment-head {
+      padding: 0px 10px; /* Further reduce padding on smaller screens */
+    }
+  
+    .text-holder {
+      padding: 20px;
+    }
+  
+    .comments-header {
+      font-size: 28px; /* Reduce font size on mobile */
+    }
+  
+    .comment-para {
+      font-size: 14px; /* Adjust paragraph font size */
+    }
+  
+    .first {
+      gap: 10px; /* Reduce gap between cards */
+      flex-direction: column;
+    }
+  
+    .comment-card {
+      width: 100%;
+    }
+  
+    .profile-img {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .pro-text {
+      font-size: 16px;
+    }
+  }
+  
