@@ -32,9 +32,10 @@ const Works = () => {
                   <span className="work-card-head">Select Type of Vehicle</span>
                   <img src="./images/Line.png" alt="" className="line" />
                   <p className="card-para">
-                    Once you have made payments, your papers will be processed
-                    immediately within 24 hours (with a picture proof), delivery
-                    is usually done the next day. Get Started Now .
+                  Whether a Saloon car, SUV, Motorcylce or even Trucks, 
+                  you can specify your vehicle type and few other details 
+                  and our platform automatically gives you the cost for either paper renewal, vehicle registration, change of 
+                  ownership or other types of papers.
                   </p>
                 </div>
               </div>

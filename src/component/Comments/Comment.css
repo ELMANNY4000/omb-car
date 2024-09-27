@@ -2,10 +2,10 @@
     display: flex;
     padding: 100px 80px;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 10px;
     background: #F7F7F8;
+    width: 100%;
 }
 
 .comment-inner {
@@ -124,7 +124,8 @@
 
 
 
-@media screen and (max-width: 450px) and (max-width: 675px) {
+@media screen and (min-width: 450px) and (min-width: 675px) {
+  
    
 }
     
