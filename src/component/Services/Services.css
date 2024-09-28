@@ -61,6 +61,44 @@
     cursor: pointer;
 }
 
+.active {
+    border-radius: 4px;
+    background: var(--Primary-500, #3563E9); /* Blue background */
+    color: white; /* White text color */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transform: scale(1.05); /* Slight size increase */
+}
+
+.category-btn {
+    display: flex;
+    width: 193px;
+    height: 51px;
+    padding: 5px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 4px;
+    background: #FFF;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for active state */
+}
+
+.cate-text {
+    color: #000;
+    text-align: center;
+    font-family: Manrope;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 160%;
+    letter-spacing: -0.3px;
+}
+
+/* Add hover effect for buttons */
+.category-btn:hover {
+    background: rgba(53, 99, 233, 0.1); /* Light hover background */
+}
+
+
 .title-container {
     display: flex;
     width: 285px;

@@ -10,6 +10,9 @@ const Services = () => {
     price: "",
   });
 
+  // State to manage active category
+  const [activeCategory, setActiveCategory] = useState("Cars");
+
   // Function to toggle popup and update its content dynamically
   const togglePopup = (serviceTitle, serviceRequirements, servicePrice) => {
     setPopupContent({
@@ -20,30 +23,49 @@ const Services = () => {
     setShowPopup(!showPopup);
   };
 
+  // Function to set active category
+  const handleCategoryClick = (category) => {
+    setActiveCategory(category);
+  };
+
   return (
     <>
       <div className="services">
         <div className="service-container">
-          {" "}
-          
           {/* Header-text */}
           <div className="service-head">
             <h1 className="service-header">Select a service</h1>
             {/* Category Button */}
             <div className="select-container">
-              <div  className="category-btn">
+              <div
+                className={`category-btn ${
+                  activeCategory === "Cars" ? "active" : ""
+                }`}
+                onClick={() => handleCategoryClick("Cars")}
+              >
                 <span className="cate-text">Cars</span>
               </div>
-              
-              <div className="category-btn">
+
+              <div
+                className={`category-btn ${
+                  activeCategory === "Motorcycle" ? "active" : ""
+                }`}
+                onClick={() => handleCategoryClick("Motorcycle")}
+              >
                 <span className="cate-text">Motorcycle</span>
               </div>
 
-              <div className="category-btn">
+              <div
+                className={`category-btn ${
+                  activeCategory === "Truck" ? "active" : ""
+                }`}
+                onClick={() => handleCategoryClick("Truck")}
+              >
                 <span className="cate-text">Truck</span>
               </div>
             </div>
           </div>
+
           {/* Service Cards */}
           <div className="service-card-con">
             {/* Vehicle Document Renewal */}
