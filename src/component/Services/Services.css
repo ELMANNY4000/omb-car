@@ -258,8 +258,7 @@
   }
 
   .service-card {
-    width: 100%;
-    padding: 15px;
+    max-width: 100%;
   }
 
   .service-card-con {
