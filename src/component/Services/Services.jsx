@@ -31,10 +31,10 @@ const Services = () => {
             <h1 className="service-header">Select a service</h1>
             {/* Category Button */}
             <div className="select-container">
-              <div className="category-btn">
+              <div  className="category-btn">
                 <span className="cate-text">Cars</span>
               </div>
-
+              
               <div className="category-btn">
                 <span className="cate-text">Motorcycle</span>
               </div>

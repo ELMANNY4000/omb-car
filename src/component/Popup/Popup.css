@@ -73,12 +73,13 @@
   }
   
   .cancel-btn {
-    background-color: #ff5f5f;
-    color: white;
+    
+    background-color: #EFF5FF;
+    color: #3563E9;
   }
   
   .proceed-btn {
-    background-color: #4caf50;
+    background-color: #3563E9;
     color: white;
   }
   
@@ -86,6 +87,14 @@
   @media screen and (max-width: 480px) {
     .popup-inner {
       padding: 20px;
+    }
+
+    .popup-inner {
+        
+        
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
   
     .pop-header h2 {

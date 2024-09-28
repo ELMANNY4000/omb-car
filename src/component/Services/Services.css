@@ -1,3 +1,8 @@
+.active {
+    border-radius: 4px;
+    background: var(--Primary-500, #3563E9);
+}
+
 .services {
     display: flex;
     padding: 100px 80px;
