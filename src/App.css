@@ -1,15 +1,96 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
-*{
+* {
   padding: 0;
   margin: 0;
   font-family: 'Clash Display', sans-serif;
   font-family: "Manrope", sans-serif;
   box-sizing: border-box;
-  
 }
 
+body {
+  padding: 0;
+  margin: 0;
+}
 
-@media screen and (max-width: 450px) and (max-width: 675px) {
- 
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero, .services, .works, .about, .comments, .footer {
+  padding: 60px 0;
+}
+
+h1, h2, h3 {
+  font-family: 'Clash Display', sans-serif;
+  margin-bottom: 20px;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive Media Queries */
+
+/* For tablets and larger phones */
+@media (max-width: 768px) {
+  .hero, .services, .works, .about, .comments, .footer {
+    padding: 40px 20px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .hero {
+    text-align: center;
+  }
+}
+
+/* For small phones */
+@media (max-width: 450px) {
+  .hero, .services, .works, .about, .comments, .footer {
+    padding: 30px 15px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  .hero {
+    text-align: center;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .navbar, .footer {
+    padding: 15px;
+  }
+
+  /* Adjusting spacing for smaller screens */
+  .container {
+    padding: 0 10px;
+  }
 }
