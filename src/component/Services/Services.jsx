@@ -10,8 +10,88 @@ const Services = () => {
     price: "",
   });
 
-  // State to manage active category
   const [activeCategory, setActiveCategory] = useState("Cars");
+
+  // Service data for each category
+  const serviceData = {
+    Cars: [
+      {
+        img: "./images/service.jpg",
+        title: "Vehicle Document Renewal",
+        price: "₦15,400",
+        requirements: [
+          "Full Name", "Address", "Scanned Copy of custom duties",
+          "Chassis number", "Engine Number", "Car Color",
+          "Phone Number", "Picture of chassis on Dashboard",
+          "A Picture of the expired vehicle license", 
+          "Address and Phone number for delivery"
+        ],
+      },
+      {
+        img: "./images/service1.jpg",
+        title: "Vehicle Re-Registration (Change of Ownership)",
+        price: "₦12,000",
+        requirements: [
+          "Full Name", "Address", "Proof of Ownership",
+          "Previous Registration Documents", "Chassis Number", "Engine Number"
+        ],
+      },
+    ],
+    Motorcycle: [
+      {
+        img: "./images/service.jpg",
+        title: "Vehicle Document Renewal",
+        price: "₦15,400",
+        requirements: [
+          "Full Name", "Address", "Scanned Copy of custom duties",
+          "Chassis number", "Engine Number", "Car Color",
+          "Phone Number", "Picture of chassis on Dashboard",
+          "A Picture of the expired vehicle license", 
+          "Address and Phone number for delivery"
+        ],
+      },
+      {
+        img: "./images/service1.jpg",
+        title: "Vehicle Re-Registration (Change of Ownership)",
+        price: "₦12,000",
+        requirements: [
+          "Full Name", "Address", "Proof of Ownership",
+          "Previous Registration Documents", "Chassis Number", "Engine Number"
+        ],
+      },
+      {
+        img: "./images/service3.jpg",
+        title: "Drivers License (New Application)",
+        price: "₦15,000",
+        requirements: [
+          "Full Name", "Address", "Medical Fitness Report", "Passport Photos"
+        ],
+      },
+      {
+        img: "./images/service2.jpg",
+        title: "International Drivers License",
+        price: "₦10,500",
+        requirements: [
+          "Full Name", "Address", "Current Drivers License", "Passport Photo"
+        ],
+      },
+    ],
+    Truck: [
+      {
+        img: "./images/service3.jpg",
+        title: "Drivers License (New Application)",
+        price: "₦15,000",
+        requirements: [
+          "Full Name", "Address", "Medical Fitness Report", "Passport Photos"
+        ],
+      },
+    ],
+  };
+
+  // Function to set active category
+  const handleCategoryClick = (category) => {
+    setActiveCategory(category);
+  };
 
   // Function to toggle popup and update its content dynamically
   const togglePopup = (serviceTitle, serviceRequirements, servicePrice) => {
@@ -23,11 +103,6 @@ const Services = () => {
     setShowPopup(!showPopup);
   };
 
-  // Function to set active category
-  const handleCategoryClick = (category) => {
-    setActiveCategory(category);
-  };
-
   return (
     <>
       <div className="services">
@@ -35,172 +110,46 @@ const Services = () => {
           {/* Header-text */}
           <div className="service-head">
             <h1 className="service-header">Select a service</h1>
+
             {/* Category Button */}
             <div className="select-container">
-              <div
-                className={`category-btn ${
-                  activeCategory === "Cars" ? "active" : ""
-                }`}
-                onClick={() => handleCategoryClick("Cars")}
-              >
-                <span className="cate-text">Cars</span>
-              </div>
-
-              <div
-                className={`category-btn ${
-                  activeCategory === "Motorcycle" ? "active" : ""
-                }`}
-                onClick={() => handleCategoryClick("Motorcycle")}
-              >
-                <span className="cate-text">Motorcycle</span>
-              </div>
-
-              <div
-                className={`category-btn ${
-                  activeCategory === "Truck" ? "active" : ""
-                }`}
-                onClick={() => handleCategoryClick("Truck")}
-              >
-                <span className="cate-text">Truck</span>
-              </div>
+              {["Cars", "Motorcycle", "Truck"].map((category) => (
+                <div
+                  key={category}
+                  className={`category-btn ${activeCategory === category ? "active" : ""}`}
+                  onClick={() => handleCategoryClick(category)}
+                >
+                  <span className="cate-text">{category}</span>
+                </div>
+              ))}
             </div>
           </div>
 
           {/* Service Cards */}
           <div className="service-card-con">
-            {/* Vehicle Document Renewal */}
-            <div className="service-card">
-              <div className="img-service">
-                <img
-                  src="./images/service.jpg"
-                  alt=""
-                  className="service-img"
-                />
+            {serviceData[activeCategory].map((service, index) => (
+              <div className="service-card" key={index}>
+                <div className="img-service">
+                  <img src={service.img} alt="" className="service-img" />
+                </div>
+                <span className="card-title">{service.title}</span>
+                <div className="card-price">From: {service.price}</div>
+                <div
+                  className="payment-btn"
+                  onClick={() =>
+                    togglePopup(
+                      `${service.title} Requirements`,
+                      service.requirements,
+                      service.price
+                    )
+                  }
+                >
+                  <span className="payment-text">Learn more</span>
+                </div>
               </div>
-              <span className="card-title">Vehicle Document Renewal</span>
-              <div className="card-price">From: ₦5,000 - ₦15,400</div>
-              <div
-                className="payment-btn"
-                onClick={() =>
-                  togglePopup(
-                    "Vehicle Document Renewal Requirements",
-                    [
-                      "Full Name",
-                      "Address",
-                      "Scanned Copy of custom duties",
-                      "Chassis number",
-                      "Engine Number",
-                      "Car Color",
-                      "Phone Number",
-                      "Picture of chassis on Dashboard",
-                      "New Car Registration Requirements",
-                      "A Picture of the expired vehicle license",
-                      "Address and Phone number for delivery",
-                    ],
-                    "₦15,400"
-                  )
-                }
-              >
-                <span className="payment-text">Learn more</span>
-              </div>
-            </div>
-
-            {/* Vehicle Re-Registration */}
-            <div className="service-card">
-              <div className="img-service">
-                <img
-                  src="./images/service1.jpg"
-                  alt=""
-                  className="service-img"
-                />
-              </div>
-              <span className="card-title">
-                Vehicle Re-Registration (Change of Ownership)
-              </span>
-              <div className="card-price">From: ₦5,000 - ₦15,400</div>
-              <div
-                className="payment-btn"
-                onClick={() =>
-                  togglePopup(
-                    "Vehicle Re-Registration Requirements",
-                    [
-                      "Full Name",
-                      "Address",
-                      "Proof of Ownership",
-                      "Previous Registration Documents",
-                      "Chassis Number",
-                      "Engine Number",
-                    ],
-                    "₦12,000"
-                  )
-                }
-              >
-                <span className="payment-text">Learn more</span>
-              </div>
-            </div>
-
-            {/* International Drivers License */}
-            <div className="service-card">
-              <div className="img-service">
-                <img
-                  src="./images/service2.jpg"
-                  alt=""
-                  className="service-img"
-                />
-              </div>
-              <span className="card-title">International Drivers License</span>
-              <div className="card-price">From: ₦5,000 - ₦15,400</div>
-              <div
-                className="payment-btn"
-                onClick={() =>
-                  togglePopup(
-                    "International Drivers License Requirements",
-                    [
-                      "Full Name",
-                      "Address",
-                      "Current Drivers License",
-                      "Passport Photo",
-                    ],
-                    "₦10,500"
-                  )
-                }
-              >
-                <span className="payment-text">Learn more</span>
-              </div>
-            </div>
-
-            {/* Drivers License (New Application) */}
-            <div className="service-card">
-              <div className="img-service">
-                <img
-                  src="./images/service3.jpg"
-                  alt=""
-                  className="service-img"
-                />
-              </div>
-              <span className="card-title">
-                Drivers License (New Application)
-              </span>
-              <div className="card-price">From: ₦5,000 - ₦15,400</div>
-              <div
-                className="payment-btn"
-                onClick={() =>
-                  togglePopup(
-                    "Drivers License (New Application) Requirements",
-                    [
-                      "Full Name",
-                      "Address",
-                      "Medical Fitness Report",
-                      "Passport Photos",
-                    ],
-                    "₦15,000"
-                  )
-                }
-              >
-                <span className="payment-text">Learn more</span>
-              </div>
-            </div>
+            ))}
           </div>
+
           {/* Popup Component */}
           <Popup
             show={showPopup}
