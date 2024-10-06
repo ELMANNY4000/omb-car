@@ -2,6 +2,10 @@ import PropTypes from "prop-types";
 import "./Popup.css"; // Assuming the CSS matches the design
 
 const Popup = ({ show, handleClose, title, requirements, price }) => {
+  const handleProceedClick = () => {
+    window.open("https://docs.google.com/forms/d/e/1FAIpQLSe3ZWLZBuJtmFMeKqpvIGtVhJw5xiFNn5_NLST8ZwlMe_iCmw/viewform?usp=sf_link", "_blank");
+  };
+
   return (
     <div className={`popup ${show ? "show" : ""}`}>
       <div className="popup-inner">
@@ -28,7 +32,10 @@ const Popup = ({ show, handleClose, title, requirements, price }) => {
               <button className="cancel-btn" onClick={handleClose}>
                 Cancel Payment
               </button>
-              <button className="proceed-btn">Proceed Payment</button>
+              {/* Proceed Payment Button with Google Form Link */}
+              <button className="proceed-btn" onClick={handleProceedClick}>
+                Proceed Payment
+              </button>
             </div>
           </div>
         </div>
