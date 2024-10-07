@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import "./Popup.css"; // Assuming the CSS matches the design
 
-const Popup = ({ show, handleClose, title, requirements, price }) => {
+const Popup = ({ show, handleClose, title, requirements, price, paymentLink }) => {
   return (
     <div className={`popup ${show ? "show" : ""}`}>
       <div className="popup-inner">
@@ -28,7 +28,7 @@ const Popup = ({ show, handleClose, title, requirements, price }) => {
               <button className="cancel-btn" onClick={handleClose}>
                 Cancel Payment
               </button>
-              <button className="proceed-btn">Proceed Payment</button>
+              <a href={paymentLink} className="proceed-btn" >Proceed Payment</a>
             </div>
           </div>
         </div>
@@ -44,6 +44,7 @@ Popup.propTypes = {
   title: PropTypes.string.isRequired, // Dynamic title for the popup
   requirements: PropTypes.array.isRequired, // Dynamic list of requirements
   price: PropTypes.string.isRequired, // Dynamic price for the service
+  paymentLink: PropTypes.string.isRequired, // link for processing payment
 };
 
 export default Popup;

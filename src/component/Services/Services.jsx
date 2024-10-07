@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Services.css";
+import services from "../../data"
 import Popup from "../Popup/Popup";
 
 const Services = () => {
@@ -8,17 +9,21 @@ const Services = () => {
     title: "",
     requirements: [],
     price: "",
+    paymentLink: "",
   });
 
   // State to manage active category
   const [activeCategory, setActiveCategory] = useState("Cars");
 
+  const filteredServices = services.filter(service => service.category === activeCategory);
+
   // Function to toggle popup and update its content dynamically
-  const togglePopup = (serviceTitle, serviceRequirements, servicePrice) => {
+  const togglePopup = (service) => {
     setPopupContent({
-      title: serviceTitle,
-      requirements: serviceRequirements,
-      price: servicePrice,
+      title: service.title,
+      requirements: service.requirements,
+      price: service.price,
+      paymentLink: service.paymentLink,
     });
     setShowPopup(!showPopup);
   };
@@ -68,139 +73,23 @@ const Services = () => {
 
           {/* Service Cards */}
           <div className="service-card-con">
-            {/* Vehicle Document Renewal */}
-            <div className="service-card">
-              <div className="img-service">
-                <img
-                  src="./images/service.jpg"
-                  alt=""
-                  className="service-img"
-                />
+            {filteredServices.map((service, index) => (
+              <div className="service-card" key={index}>
+                <div className="img-service">
+                  <img src={service.image} alt={service.title} className="service-img" />
+                </div>
+                <span className="card-title">{service.title}</span>
+                <div className="card-price">From: {service.price}</div>
+                <div
+                  className="payment-btn"
+                  onClick={() => togglePopup(service)}
+                >
+                  <span className="payment-text">Learn more</span>
+                </div>
               </div>
-              <span className="card-title">Vehicle Document Renewal</span>
-              <div className="card-price">From: ₦5,000 - ₦15,400</div>
-              <div
-                className="payment-btn"
-                onClick={() =>
-                  togglePopup(
-                    "Vehicle Document Renewal Requirements",
-                    [
-                      "Full Name",
-                      "Address",
-                      "Scanned Copy of custom duties",
-                      "Chassis number",
-                      "Engine Number",
-                      "Car Color",
-                      "Phone Number",
-                      "Picture of chassis on Dashboard",
-                      "New Car Registration Requirements",
-                      "A Picture of the expired vehicle license",
-                      "Address and Phone number for delivery",
-                    ],
-                    "₦15,400"
-                  )
-                }
-              >
-                <span className="payment-text">Learn more</span>
-              </div>
-            </div>
-
-            {/* Vehicle Re-Registration */}
-            <div className="service-card">
-              <div className="img-service">
-                <img
-                  src="./images/service1.jpg"
-                  alt=""
-                  className="service-img"
-                />
-              </div>
-              <span className="card-title">
-                Vehicle Re-Registration (Change of Ownership)
-              </span>
-              <div className="card-price">From: ₦5,000 - ₦15,400</div>
-              <div
-                className="payment-btn"
-                onClick={() =>
-                  togglePopup(
-                    "Vehicle Re-Registration Requirements",
-                    [
-                      "Full Name",
-                      "Address",
-                      "Proof of Ownership",
-                      "Previous Registration Documents",
-                      "Chassis Number",
-                      "Engine Number",
-                    ],
-                    "₦12,000"
-                  )
-                }
-              >
-                <span className="payment-text">Learn more</span>
-              </div>
-            </div>
-
-            {/* International Drivers License */}
-            <div className="service-card">
-              <div className="img-service">
-                <img
-                  src="./images/service2.jpg"
-                  alt=""
-                  className="service-img"
-                />
-              </div>
-              <span className="card-title">International Drivers License</span>
-              <div className="card-price">From: ₦5,000 - ₦15,400</div>
-              <div
-                className="payment-btn"
-                onClick={() =>
-                  togglePopup(
-                    "International Drivers License Requirements",
-                    [
-                      "Full Name",
-                      "Address",
-                      "Current Drivers License",
-                      "Passport Photo",
-                    ],
-                    "₦10,500"
-                  )
-                }
-              >
-                <span className="payment-text">Learn more</span>
-              </div>
-            </div>
-
-            {/* Drivers License (New Application) */}
-            <div className="service-card">
-              <div className="img-service">
-                <img
-                  src="./images/service3.jpg"
-                  alt=""
-                  className="service-img"
-                />
-              </div>
-              <span className="card-title">
-                Drivers License (New Application)
-              </span>
-              <div className="card-price">From: ₦5,000 - ₦15,400</div>
-              <div
-                className="payment-btn"
-                onClick={() =>
-                  togglePopup(
-                    "Drivers License (New Application) Requirements",
-                    [
-                      "Full Name",
-                      "Address",
-                      "Medical Fitness Report",
-                      "Passport Photos",
-                    ],
-                    "₦15,000"
-                  )
-                }
-              >
-                <span className="payment-text">Learn more</span>
-              </div>
-            </div>
+            ))}
           </div>
+
           {/* Popup Component */}
           <Popup
             show={showPopup}
@@ -208,6 +97,7 @@ const Services = () => {
             title={popupContent.title}
             requirements={popupContent.requirements}
             price={popupContent.price}
+            paymentLink={popupContent.paymentLink}
           />
         </div>
       </div>
